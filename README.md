@@ -1,84 +1,53 @@
-# 🔦 SQL Detective: The Ultimate Database Mystery Adventure
+# 🕵️ SQL Detective — The Ultimate Database Mystery Adventure
 
-A fully client-side SQL learning game. The Crown Diamond has been stolen from
-the Grand Museum — you play a detective who writes **real SQL** against a
-live, in-browser SQLite database (via [sql.js](https://github.com/sql-js/sql.js))
-to interrogate suspects, evidence, transactions and camera logs across 8
-progressively harder case files, from `SELECT`/`WHERE` up to CTEs and window
-functions.
+<p align="center">
+  <b>🎮 Learn SQL. Solve Mysteries. Become a Database Detective.</b>
+</p>
 
-## Running it locally
+<p align="center">
+  An interactive browser-based SQL learning game where players solve fictional crimes by writing SQL queries, discovering clues, and identifying suspects.
+</p>
 
-You can't just double-click `index.html` in some browsers, because the
-`fetch` used to load the WASM SQL engine needs to run over `http://`, not
-`file://`. Serve the folder instead:
+<p align="center">
+  <a href="YOUR_VERCEL_LINK">🚀 Live Demo</a> •
+  <a href="YOUR_GITHUB_LINK">💻 Source Code</a>
+</p>
 
-```bash
-cd sql-detective
-python3 -m http.server 8080
-# then open http://localhost:8080 in your browser
-```
+---
 
-or with Node:
+## 🎯 About the Project
 
-```bash
-npx serve .
-```
+**SQL Detective** is an interactive SQL learning game designed to make database learning more engaging through a detective-style gaming experience.
 
-## Deploying it
+Instead of solving traditional SQL exercises, players investigate mysterious cases, explore database tables, discover hidden clues, and write SQL queries to uncover the truth.
 
-It's static, so any static host works — no configuration needed:
+The game combines:
 
-- **GitHub Pages**: push this repo, then enable Pages on the `main` branch
-  (root folder). Your game will be live at
-  `https://<username>.github.io/<repo>/`.
-- **Netlify / Vercel**: drag-and-drop the folder, or connect the repo —
-  no build command needed, publish directory is `.` / `/`.
+> 🕵️ Detective Investigation + 💻 SQL + 🎮 Gamification + 🗄️ Database Learning
 
-## Project structure
+---
 
-```
-sql-detective/
-├── index.html          # entry point, loads css + js in order
-├── css/
-│   └── style.css        # all styling: glassmorphism, neon, CRT scanline theme
-├── js/
-│   ├── data.js           # DB schema/seed SQL, case/challenge definitions,
-│   │                      # achievements, SQL Academy lessons, mock leaderboard
-│   ├── state.js           # game state object, sound synth (Web Audio), toasts
-│   ├── engine.js           # sql.js bootstrap + query execution/comparison
-│   ├── ui.js               # all screen rendering + game logic
-│   └── main.js              # boot sequence
-└── ANSWERS.md            # reference solution query for every case/challenge
-```
+## 🎮 How the Game Works
 
-Scripts are loaded as plain `<script src>` tags (no bundler), so the load
-order in `index.html` matters: `data.js` → `state.js` → `engine.js` →
-`ui.js` → `main.js`.
+Players progress through a series of fictional investigations.
 
-## How grading works
+### 🔎 Investigation Flow
 
-Each challenge has a canonical "solution" query. When you run your own
-query, the game runs both, normalizes both result sets (sorts values within
-each row, then sorts the rows), and compares them — so any query that
-produces the same data is accepted, not just one exact string.
-
-## Notes / known limitations
-
-- **No backend or persistence.** Progress (XP, solved challenges,
-  achievements) lives only in memory for the current page load and resets
-  on refresh. To persist progress you'd want to add `localStorage` (works
-  fine in a real deployed site — it's only disallowed inside Claude's
-  in-chat artifact sandbox) or a small backend + database.
-- **Sandboxed by design.** The game database is a private in-memory SQLite
-  instance created fresh per session — there's nothing for a destructive
-  query to damage. `DROP`, `ALTER`, `ATTACH`, `PRAGMA`, and `VACUUM` are
-  additionally blocked in the query runner as a defense-in-depth measure;
-  `INSERT`/`UPDATE`/`DELETE` are allowed so players can safely see how they
-  work.
-- **Leaderboard is mock data** (`js/data.js` → `MOCK_LB`) since there's no
-  backend to source real player scores from.
-
-## License
-
-Use it, fork it, extend it — no restrictions.
+```text
+Select Case
+     ↓
+Read the Mystery
+     ↓
+Explore Database Tables
+     ↓
+Write SQL Query
+     ↓
+Run Query
+     ↓
+Discover Clue
+     ↓
+Unlock Next Challenge
+     ↓
+Identify the Suspect
+     ↓
+🔐 CASE CLOSED
