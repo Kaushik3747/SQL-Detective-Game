@@ -7,9 +7,6 @@ to interrogate suspects, evidence, transactions and camera logs across 8
 progressively harder case files, from `SELECT`/`WHERE` up to CTEs and window
 functions.
 
-No backend, no build step, no server-side database — everything runs
-locally in the browser tab.
-
 ## Running it locally
 
 You can't just double-click `index.html` in some browsers, because the
