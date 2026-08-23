@@ -8,10 +8,7 @@
   An interactive browser-based SQL learning game where players solve fictional crimes by writing SQL queries, discovering clues, and identifying suspects.
 </p>
 
-<p align="center">
-  <a href="YOUR_VERCEL_LINK">🚀 Live Demo</a> •
-  <a href="YOUR_GITHUB_LINK">💻 Source Code</a>
-</p>
+
 
 ---
 
